@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Super Villans</title>
+  </head>
+  <body>
+    <h1>Create A Super Villan</h1>
+    <div ng-controller="villanController">
+      <input ng-model="aliasIn" type="text" placeholder="Alias" name="name" value="">
+      <input ng-model="fNameIn" type="text" placeholder="First Name" name="name" value="">
+      <input ng-model="lNameIn" type="text" placeholder="Last Name" name="name" value="">
+      <input ng-model="cityIn" type="text" placeholder="City" name="name" value="">
+      <select ng-model="powerIn" class="" name="">
+        <option ng-repeat="power in powerList">{{power}}</option>
+      </select>
+
+      <button type="button" ng-click="createVillan();" name="button">Create a Villan!</button>
+
+      <table>
+        <tr ng-repeat="villan in villanRecords">
+          <td>{{villan.alias}}</td>
+          <td>Name: {{villan.first_name}} {{villan.last_name}}</td>
+          <td>City: {{villan.city}}</td>
+          <td>Power: {{villan.power_name}}</td>
+          <td><button type="button" ng-click="vanquish(villan._id)" name="button">Vanquish!</button></td>
+        </tr>
+      </table>
+
+    </div>
+    <!-- End createVillan Controller -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="/scripts/script.js" charset="utf-8"></script>
+
+    </script>
+  </body>
+</html>
